@@ -1,27 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-lg-6 mx-auto">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">New Note</h5>
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="New Note">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Text</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-secondary">Save Note</button>
-                    </form>
-                </div>
+
+<div class="row mt-4">
+    <div class="col-lg-6 mx-auto">
+        <div class="card">
+            <div class="card-header bg-dark text-light">
+                <h5 class="card-title mb-1">New Note</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="New Note">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Text</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-ember">Save Note</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const textarea = document.getElementById("exampleFormControlTextarea1");
+
+    textarea.addEventListener("input", () => {
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+    });
+</script>
 {% endblock content %}
